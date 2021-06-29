@@ -17,7 +17,6 @@ if n <= k:
         if i < k and i <= 50000:
             dp[i * 2] = min(dp[i * 2], dp[i] + 1)
 else:
-    for i in range(k, n + 1):
-        dp[i] = n - i
+    dp[k] = n - k
 
 print(dp[k])
