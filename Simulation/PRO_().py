@@ -12,12 +12,13 @@ def uv(p):
             return p[:i + 1], p[i + 1:]
 
 # u가 "올바른 괄호 문자열"인지 판별하는 함수
-def isbalanced(temp):
+def isRight(temp):
     while True:
         lenn = len(temp)
 
         if lenn == 0:
             return True
+        
         for i in range(lenn - 1):
             if temp[i] == '(' and temp[i + 1] == ')':
                 del temp[i]
@@ -38,7 +39,7 @@ def solution(p):
     temp = list(u)
 
     # 3단계 : u가 올바른 괄호 문자열이면 문자열 v에 대해 1단계부터 다시 수행
-    if isbalanced(temp):
+    if isRight(temp):
         # 3-1단계 - 수행한 결과 문자열을 u에 이어 붙인 후 반환
         return u + solution(v)
 
