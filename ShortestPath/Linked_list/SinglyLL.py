@@ -112,7 +112,7 @@ if __name__ == "__main__":
     sl.append(Node(5))
     sl.insertNodeAtIndex(3, Node(4))
     sl.print()
-    print(sl.getdataIndex(1))
+    sl.deleteAtIndex(0)
     print(sl.getdataIndex(2))
     print(sl.getdataIndex(3))
     print(sl.getdataIndex(4))
