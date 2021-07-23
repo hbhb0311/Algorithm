@@ -8,7 +8,7 @@ graph = [[] for _ in range(V + 1)]
 
 for _ in range(E):
     start, end, cost = map(int, input().split())
-    graph[start].append((end, cost))
+    graph[start].append((cost, end))
 
 start, end = map(int, input().split())
 
@@ -20,16 +20,17 @@ heapq.heappush(q, (0, start))
 distance[start] = 0
 
 while q:
+
     dist, now = heapq.heappop(q)
 
     if distance[now] < dist:
         continue
 
     for i in graph[now]:
-        cost = dist + i[1]
+        cost = dist + i[0]
 
-        if cost < distance[i[0]]:
-            distance[i[0]] = cost
-            heapq.heappush(q, (cost, i[0]))
+        if cost < distance[i[1]]:
+            distance[i[1]] = cost
+            heapq.heappush(q, (cost, i[1]))
 
 print(distance[end])
