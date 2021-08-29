@@ -74,13 +74,12 @@ def cntcheck(string, keyword):
     return cnt == 1
 
 def shift(s):
-    shifted = s
     length = len(s)
 
     for i in range(length):
-        shifted[i] = leftShiftedChar[shifted[i]]
+        s[i] = leftShiftedChar[s[i]]
 
-    return shifted
+    return s
 
 
 N = int(input())
