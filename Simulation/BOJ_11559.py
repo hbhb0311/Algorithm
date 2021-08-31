@@ -15,7 +15,8 @@ def cntCheck(x, y):
             for i in range(4):
                 nx = node[0] + d[i][0]
                 ny = node[1] + d[i][1]
-                if 0 <= nx < 12 and 0 <= ny < 6 and graph[node[0]][node[1]] == graph[nx][ny]:
+                if 0 <= nx < 12 and 0 <= ny < 6 and \
+                        graph[node[0]][node[1]] == graph[nx][ny]:
                     need.append((nx, ny))
     return visited
 
