@@ -7,7 +7,7 @@ cost = list(map(int, input().split()))
 ans = 0
 i, j = 0, 1
 
-while j <= len(dist):
+while j < len(cost):
     if cost[i] > cost[j]:
         ans += cost[i] * dist[j - 1]
         i = j
