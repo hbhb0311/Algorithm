@@ -16,7 +16,7 @@ def solution(n, computers):
             if idx == i: continue
             if v == 1: graph[idx].append(i)
 
-    while visited.count(False) > 0:
+    while False in visited:
         dfs(visited.index(False), graph, visited)
         answer += 1
 
